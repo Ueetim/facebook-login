@@ -182,3 +182,23 @@ input[type=submit]:hover {
 input[type=submit]:active {
     background-color: #002500;
 }
+
+.error-txt {
+    color: red;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+.input-field {
+    position: relative;
+}
+
+.exclaim {
+    color: red;
+    font-size: 20px;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    visibility: hidden;
+}

@@ -20,24 +20,43 @@
             <button>&times;</button>
         </div>
         <hr>
-        <form action="">
+        <form action="fb_login_controller.php" method="POST">
             <!-- name -->
             <div class="name">
+                <!-- first name -->
                 <div class="fname">
-                    <input type="text" name="fname" id="fname" placeholder="First name">
+                    <div class="input-field">
+                        <input type="text" name="fname" id="fname" placeholder="First name" value="<?= $fname ?>" <?php if(!empty($errors['fname'])) { ?>style="border:1px solid red" <?php } ?>>
+                        <i class="fas fa-exclamation-circle exclaim" <?php if(!empty($errors['fname'])) { ?> style="visibility: visible" <?php } ?>></i>
+                    </div>
+                    <p class="error-txt"><?php echo $errors['fname'] ?></p>
                 </div>
+
+                <!-- last name -->
                 <div class="lname">
-                <input type="text" name="lname" id="lname" placeholder="Surname">
+                <div class="input-field">
+                    <input type="text" name="lname" id="lname" placeholder="Surname" value="<?= $lname ?>" <?php if(!empty($errors['lname'])) { ?>style="border:1px solid red" <?php } ?>>
+                    <i class="fas fa-exclamation-circle exclaim" <?php if(!empty($errors['lname'])) { ?> style="visibility: visible" <?php } ?>></i>
+                </div>
+                <p class="error-txt"><?php echo $errors['lname'] ?></p>
                 </div>
             </div>
 
             <!-- email -->
             <div class="email">
-                <input type="text" name="email" id="email" placeholder="Mobile number or email address">
+                <div class="input-field">
+                    <input type="text" name="email" id="email" value="<?= $email ?>" placeholder="Mobile number or email address" <?php if(!empty($errors['email'])) { ?>style="border:1px solid red" <?php } ?>>
+                    <i class="fas fa-exclamation-circle exclaim" <?php if(!empty($errors['email'])) { ?> style="visibility: visible" <?php } ?>></i>
+                </div>
+                <p class="error-txt"><?php echo $errors['email'] ?></p>
             </div>
 
             <!-- password -->
-            <input type="password" name="pword" id="pword" placeholder="Password">
+            <div class="input-field">
+                <input type="password" name="pword" id="pword" placeholder="Password">
+                <i class="fas fa-exclamation-circle exclaim" ></i>
+            </div>
+            <p class="error-txt"></p>
 
             <!-- date of birth -->
             <p class="input-info">Date of birth <i class="fa fa-question-circle" aria-hidden="true"></i></p>
@@ -52,6 +71,7 @@
                     <!-- options -->
                 </select>
             </div>
+            <p class="error-txt"></p>
 
             <!-- gender -->
             <p class="input-info">Gender <i class="fa fa-question-circle" aria-hidden="true"></i></p>
@@ -70,6 +90,7 @@
                         <label for="custom">Custom</label>
                     </div>
                 </div>
+                <!-- <p class="error-txt"></p> -->
 
                 <!-- custom option -->
                 <div class="custom-container">
@@ -93,7 +114,7 @@
             </div>
 
             <div class="submit-btn">
-                <input type="submit" value="Sign Up">
+                <input type="submit" value="Sign Up" name="submit">
             </div>
         </form>
     </div>
