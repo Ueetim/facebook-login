@@ -106,6 +106,7 @@ body {
     border-radius: 5px;
     padding-right: 7px;
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
 }
@@ -126,19 +127,20 @@ body {
 }
 
 .custom-container {
-    /* display: flex; */
+    width: 100%;
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
     display: none;
 }
-
-input[type=radio]:checked .input-info {
-    color: green;
-}
+/* 
+#custom:checked ~ label {
+    background-color: red;
+    display: none;
+} */
 
 .custom-container .input-info {
-    margin-top: -5px;
+    margin-bottom: 15px;
 }
 
 .terms {
@@ -169,4 +171,14 @@ input[type=submit] {
     color: #fff;
     border: none;
     max-width: 300px;
+    transition: background-color .2s;
+}
+
+input[type=submit]:hover {
+    background-color: #008c00;
+    transition: .2s;
+}
+
+input[type=submit]:active {
+    background-color: #002500;
 }

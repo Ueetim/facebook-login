@@ -57,17 +57,17 @@
             <p class="input-info">Gender <i class="fa fa-question-circle" aria-hidden="true"></i></p>
             <div class="gender">
                 <div class="gender-options">
-                    <div class="female">
-                        <label for="fmale">Female</label>
+                    <div class="gender-opt female">
                         <input type="radio" name="gender" value="female" id="fmale">
+                        <label for="fmale">Female</label>
                     </div>
-                    <div class="male">
-                        <label for="male">Male</label>
+                    <div class="gender-opt male">
                         <input type="radio" name="gender" value="male" id="male">
+                        <label for="male">Male</label>
                     </div>
-                    <div class="custom">
-                        <label for="custom">Custom</label>
+                    <div class="gender-opt custom">
                         <input type="radio" name="gender" value="custom" id="custom">
+                        <label for="custom">Custom</label>
                     </div>
                 </div>
 
@@ -80,9 +80,10 @@
                         <option value="they">They: "Wish them a happy birthday!"</option>
                     </select>
                     <p class="input-info">Your pronoun is visible to everyone.</p>
-
+    
                     <input type="text" name="gender-opt" id="gender-opt" placeholder="Gender (optional)">
                 </div>
+
             </div>
 
             <!-- terms and agreement -->
@@ -96,5 +97,9 @@
             </div>
         </form>
     </div>
+
+    <!-- script -->
+
+    <script src="main.js"></script>
 </body>
 </html>
