@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.container {
+    width: 450px;
+    margin: 20px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.158);
+    border-radius: 5px;
+}
+
+.container > div, .container > form {
+    padding: 20px;
+}
+
+/* header */
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    line-height: 35px;
+}
+
+.form-header button {
+    font-size: 30px;
+    background-color: transparent;
+    border: none;
+    padding: 0 3px;
+    transition: .2s;
+}
+
+.form-header button:hover {
+    background-color: rgb(221, 221, 221);
+    transition: .2s;
+}
+
+/* form */
+.container > form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container > form input, .container > form select {
+    width: 100%;
+    outline: none;
+    padding: 11px 7px;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+}
+
+.container > form .name {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.name > div {
+    width: 100%;
+}
+
+.input-info {
+    font-size: 13px;
+    color: rgb(85, 85, 85);
+    margin-top: 10px;
+}
+
+.dob {
+    display: flex;
+    gap: 10px;
+}
+
+.dob select {
+    width: 100%;
+}
+
+.container > form select {
+    background-color: white;
+    padding: 8px 7px;
+}
+
+.gender{
+    width: 100%;
+}
+
+.gender-options {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.gender-options > div {
+    width: 100%;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    padding-right: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gender-options label {
+    width: 100%;
+    height: 100%;
+    padding: 8px 0 8px 7px;
+}
+
+.gender-options input {
+    max-width: 15px;
+    padding: 8px;
+}
+
+.gender > div {
+    width: 100%;
+}
+
+.custom-container {
+    /* display: flex; */
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    display: none;
+}
+
+input[type=radio]:checked .input-info {
+    color: green;
+}
+
+.custom-container .input-info {
+    margin-top: -5px;
+}
+
+.terms {
+    font-size: 13px;
+    line-height: 15px;
+    color: rgb(85, 85, 85);
+}
+
+.terms a {
+    text-decoration: none;
+    color: rgb(0, 119, 255);
+}
+
+.terms p {
+    margin-bottom: 5px;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+input[type=submit] {
+    background-color: #00a400;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    max-width: 300px;
+}
