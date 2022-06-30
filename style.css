@@ -52,6 +52,10 @@ body {
     gap: 10px;
 }
 
+hr {
+    border: 1px solid #cacaca85;
+}
+
 .container > form input, .container > form select {
     width: 100%;
     outline: none;
@@ -73,7 +77,7 @@ body {
 .input-info {
     font-size: 13px;
     color: rgb(85, 85, 85);
-    margin-top: 10px;
+    margin-top: -5px;
 }
 
 .dob {
@@ -184,7 +188,7 @@ input[type=submit]:active {
 }
 
 .error-txt {
-    color: red;
+    color: rgb(202, 1, 1);
     font-size: 13px;
     margin-top: 3px;
 }
@@ -194,8 +198,8 @@ input[type=submit]:active {
 }
 
 .exclaim {
-    color: red;
-    font-size: 20px;
+    color: rgb(202, 1, 1);
+    font-size: 18px;
     position: absolute;
     right: 5px;
     top: 50%;

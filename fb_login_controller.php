@@ -1,8 +1,8 @@
 <?php
 
-$fname = $lname = $email = $pword = $dob = $gender = '';
+$fname = $lname = $email = $pword = $pronoun = $gender = '';
 
-$errors = ['fname'=>'', 'lname'=>'', 'email'=>'', 'pword'=>'', 'dob'=>'', 'gender'=>''];
+$errors = ['fname'=>'', 'lname'=>'', 'email'=>'', 'pword'=>'', 'pronoun'=>'', 'gender'=>''];
 
 if (isset($_POST['submit'])) {
     // first name
@@ -35,10 +35,32 @@ if (isset($_POST['submit'])) {
     } else {
         $email = $_POST['email'];
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = 'Email must be a valid email address';
+            // intval converts string to int
+            if (!intval($email)) {
+                $errors['email'] = 'Please input a valid email address or phone number';
+            }
         }
     }
 
+    // password
+    if (empty($_POST['pword'])) {
+        $errors['pword'] = "Field required";
+    }
+
+    // gender
+    if (empty($_POST['gender'])){
+        $errors['gender'] = 'Please choose your gender';
+    } else {
+        $gender = $_POST['gender'];
+
+        if ($gender == 'custom'){
+            if (empty ($_POST['pronoun'])) {
+                $errors['pronoun'] = 'Please choose an option';
+            } else {
+                $pronoun = $_POST['pronoun'];
+            }
+        }
+    }
         
 }
 
