@@ -45,6 +45,8 @@ if (isset($_POST['submit'])) {
     // password
     if (empty($_POST['pword'])) {
         $errors['pword'] = "Field required";
+    } else {
+        $pword = $_POST['pword'];
     }
 
     // gender
@@ -60,6 +62,13 @@ if (isset($_POST['submit'])) {
                 $pronoun = $_POST['pronoun'];
             }
         }
+    }
+
+    // redirect
+    if (!array_filter($errors)) { //array_filter cycles through the error array to check if values are contained
+
+        header('Location: fb_login_success.php');
+
     }
         
 }

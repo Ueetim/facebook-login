@@ -206,3 +206,22 @@ input[type=submit]:active {
     transform: translateY(-50%);
     visibility: hidden;
 }
+
+.success-con {
+    text-align: center;
+}
+
+.success-con .check {
+    font-size: 120px;
+    color: #00a400;
+}
+
+.success-con p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.success-con a {
+    text-decoration: none;
+    color: rgb(0, 119, 255)
+}
