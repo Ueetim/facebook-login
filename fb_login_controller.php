@@ -1,8 +1,8 @@
 <?php
 
-$fname = $lname = $email = $pword = $pronoun = $gender = $dob = $year = $month = $day = '';
+$fname = $lname = $email = $pword = $pronoun = $gender = $dob = $year = $month = $day = $gender_opt = '';
 
-$errors = ['fname'=>'', 'lname'=>'', 'email'=>'', 'pword'=>'', 'dob'=>'', 'pronoun'=>'', 'gender'=>''];
+$errors = ['fname'=>'', 'lname'=>'', 'email'=>'', 'pword'=>'', 'dob'=>'', 'pronoun'=>'', 'gender'=>'', 'gender_opt'=>''];
 
 if (isset($_POST['submit'])) {
     // first name
@@ -76,6 +76,14 @@ if (isset($_POST['submit'])) {
                 $errors['pronoun'] = 'Please choose an option';
             } else {
                 $pronoun = $_POST['pronoun'];
+            }
+
+            if (!empty($_POST['gender-opt'])) {
+                $gender_opt = $_POST['gender-opt'];
+
+                if (!preg_match('/^[a-zA-Z\s]+$/', $gender_opt)) {
+                    $errors['gender_opt'] = 'Gender must be made up of letters only';
+                }
             }
         }
     }

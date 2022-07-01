@@ -109,7 +109,13 @@
                     </div>
                     <p class="input-info">Your pronoun is visible to everyone.</p>
     
-                    <input type="text" name="gender-opt" id="gender-opt" placeholder="Gender (optional)">
+                    <div class="gender-opt-con">
+                        <div class="input-field">
+                            <input type="text" name="gender-opt" id="gender-opt" placeholder="Gender (optional)" value="<?= htmlspecialchars($gender_opt) ?>" <?php if(!empty($errors['gender_opt'])) { ?>style="border:1px solid rgb(202, 1, 1)" <?php } ?>>
+                            <i class="fas fa-exclamation-circle exclaim" <?php if(!empty($errors['gender_opt'])) { ?> style="visibility: visible" <?php } ?>></i>
+                        </div>
+                        <p class="error-txt"><?php echo $errors['gender_opt'] ?></p>
+                    </div>
                 </div>
 
             </div>
