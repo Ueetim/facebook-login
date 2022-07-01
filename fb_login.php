@@ -61,19 +61,21 @@
             </div>
 
             <!-- date of birth -->
-            <p class="input-info">Date of birth <i class="fa fa-question-circle" aria-hidden="true"></i></p>
-            <div class="dob">
-                <select name="day" id="day">
-                    <!-- options -->
-                </select>
-                <select name="month" id="month">
-                    <!-- options -->
-                </select>
-                <select name="year" id="year">
-                    <!-- options -->
-                </select>
+            <div class="date-of-birth">
+                <p class="input-info">Date of birth <i class="fa fa-question-circle" aria-hidden="true"></i></p>
+                <div class="dob">
+                    <select name="day" id="day" <?php if(!empty($errors['dob'])) { ?>style="border:1px solid rgb(202, 1, 1)" <?php } ?>>
+                        <!-- options -->
+                    </select>
+                    <select name="month" id="month" <?php if(!empty($errors['dob'])) { ?>style="border:1px solid rgb(202, 1, 1)" <?php } ?>>
+                        <!-- options -->
+                    </select>
+                    <select name="year" id="year" <?php if(!empty($errors['dob'])) { ?>style="border:1px solid rgb(202, 1, 1)" <?php } ?>>
+                        <!-- options -->
+                    </select>
+                </div>
+                <p class="error-txt"><?php echo $errors['dob'] ?></p>
             </div>
-            <p class="error-txt"></p>
 
             <!-- gender -->
             <p class="input-info">Gender <i class="fa fa-question-circle" aria-hidden="true"></i></p>

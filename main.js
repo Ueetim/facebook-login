@@ -19,7 +19,7 @@ gender.forEach((option) => {
   });
 });
 
-for (let i = 31; i > 0; i--) {
+for (let i = 1; i < 32; i++) {
     dobDay.innerHTML += `<option value="${i}">${i}</option>`;
 }
 
@@ -27,6 +27,6 @@ for (let i = 0; i < months.length; i++){
     dobMonth.innerHTML += `<option value="${months[i]}">${months[i]}</option>`;
 }
 
-for (let i = date; i > 1950; i--) {
+for (let i = date; i > 1900; i--) {
     dobYear.innerHTML += `<option value="${i}">${i}</option>`;
 }

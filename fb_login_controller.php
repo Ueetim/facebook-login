@@ -1,8 +1,8 @@
 <?php
 
-$fname = $lname = $email = $pword = $pronoun = $gender = '';
+$fname = $lname = $email = $pword = $pronoun = $gender = $dob = $year = $month = $day = '';
 
-$errors = ['fname'=>'', 'lname'=>'', 'email'=>'', 'pword'=>'', 'pronoun'=>'', 'gender'=>''];
+$errors = ['fname'=>'', 'lname'=>'', 'email'=>'', 'pword'=>'', 'dob'=>'', 'pronoun'=>'', 'gender'=>''];
 
 if (isset($_POST['submit'])) {
     // first name
@@ -47,7 +47,23 @@ if (isset($_POST['submit'])) {
         $errors['pword'] = "Field required";
     } else {
         $pword = $_POST['pword'];
+        if (strlen($pword) < 6) {
+            $errors['pword'] = "Password must contain at least 6 characters";
+        }
     }
+
+    // date of birth
+    $year = $_POST['year'];
+    $month = $_POST['month'];
+    $day = $_POST['day'];
+    $current_year = date("Y");
+
+    if ($year > ($current_year - 5)) {
+        $errors['dob'] = 'You must be at least 5 years old';
+    } else {
+        $dob = $day . " " . $month . ", " . $year;
+    }
+
 
     // gender
     if (empty($_POST['gender'])){
