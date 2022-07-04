@@ -26,7 +26,7 @@
                 <!-- first name -->
                 <div class="fname">
                     <div class="input-field">
-                        <input type="text" name="fname" id="fname" placeholder="First name" value="<?= htmlspecialchars($fname) ?>" <?php if(!empty($errors['fname'])) { ?>style="border:1px solid rgb(202, 1, 1)" <?php } ?>>
+                        <input type="text" name="fname" id="fname" placeholder="First name" value="<?= htmlspecialchars($fname) ?>" <?php if(!empty($errors['fname'])) { ?>style="border:1px solid rgb(202, 1, 1)" <?php } ?> autofocus>
                         <i class="fas fa-exclamation-circle exclaim" <?php if(!empty($errors['fname'])) { ?> style="visibility: visible" <?php } ?>></i>
                     </div>
                     <p class="error-txt"><?php echo $errors['fname'] ?></p>

@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
     
         // reg exp for name
         if (!preg_match('/^[a-zA-Z\s]+$/', $fname)) {
-            $errors['fname'] = 'Name must be made up of letters only';
+            $errors['fname'] = 'Name must be made up of letters and spaces only';
         }
     }
 
@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
     
         // reg exp for name
         if (!preg_match('/^[a-zA-Z\s]+$/', $lname)) {
-            $errors['lname'] = 'Name must be made up of letters only';
+            $errors['lname'] = 'Name must be made up of letters and spaces only';
         }
     }
 
@@ -82,22 +82,21 @@ if (isset($_POST['submit'])) {
                 $gender_opt = $_POST['gender-opt'];
 
                 if (!preg_match('/^[a-zA-Z\s]+$/', $gender_opt)) {
-                    $errors['gender_opt'] = 'Gender must be made up of letters only';
+                    $errors['gender_opt'] = 'Gender must be made up of letters and spaces only';
                 }
             }
         }
     }
 
     // redirect
-    if (!array_filter($errors)) { //array_filter cycles through the error array to check if values are contained
+    if (!array_filter($errors)) { //array_filter reeturns false if all values in the array are the same
 
         header('Location: fb_login_success.php');
 
-    }
-        
+    }      
 }
 
 
 require('fb_login.php');
 
-?>
+?> 
